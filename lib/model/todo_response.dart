@@ -46,7 +46,7 @@ class Tag with _$Tag {
   factory Tag({
     required String id,
     required String type,
-    @JsonKey(name: 'multi_select') required List<TagItem> multiSelect,
+    @JsonKey(name: 'multi_select') @Default([]) List<TagItem> multiSelect,
   }) = _Tag;
 
   factory Tag.fromJson(Map<String, dynamic> json) => _$TagFromJson(json);

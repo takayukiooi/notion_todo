@@ -13,4 +13,32 @@ class TodoRepository {
     final response = await api.post(path);
     return TodoResponse.fromJson(response.data);
   }
+
+  Future<void> addTodo(
+    String title,
+    String body,
+  ) async {
+    final path = '/pages';
+    final params = <String, dynamic>{
+      "parent": {"database_id": databaseId},
+      "properties": {
+        "Name": {
+          "title": [
+            {
+              "text": {"content": title},
+            },
+          ],
+        },
+        "Body": {
+          "rich_text": [
+            {
+              "text": {"content": body},
+            },
+          ],
+        },
+      },
+    };
+
+    await api.post(path, data: params);
+  }
 }

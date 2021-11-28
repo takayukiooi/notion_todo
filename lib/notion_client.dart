@@ -8,6 +8,7 @@ BaseOptions options = BaseOptions(
   headers: <String, dynamic>{
     HttpHeaders.authorizationHeader: 'Bearer $notionSecret',
     HttpHeaders.contentTypeHeader: 'application/json',
+    'Notion-Version': '2021-08-16',
   },
   connectTimeout: 5000,
   receiveTimeout: 3000,

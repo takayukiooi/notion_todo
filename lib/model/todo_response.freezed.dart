@@ -824,7 +824,7 @@ class _$TagTearOff {
   _Tag call(
       {required String id,
       required String type,
-      @JsonKey(name: 'multi_select') required List<TagItem> multiSelect}) {
+      @JsonKey(name: 'multi_select') List<TagItem> multiSelect = const []}) {
     return _Tag(
       id: id,
       type: type,
@@ -942,7 +942,7 @@ class _$_Tag implements _Tag {
   _$_Tag(
       {required this.id,
       required this.type,
-      @JsonKey(name: 'multi_select') required this.multiSelect});
+      @JsonKey(name: 'multi_select') this.multiSelect = const []});
 
   factory _$_Tag.fromJson(Map<String, dynamic> json) => _$_$_TagFromJson(json);
 
@@ -992,10 +992,9 @@ class _$_Tag implements _Tag {
 
 abstract class _Tag implements Tag {
   factory _Tag(
-          {required String id,
-          required String type,
-          @JsonKey(name: 'multi_select') required List<TagItem> multiSelect}) =
-      _$_Tag;
+      {required String id,
+      required String type,
+      @JsonKey(name: 'multi_select') List<TagItem> multiSelect}) = _$_Tag;
 
   factory _Tag.fromJson(Map<String, dynamic> json) = _$_Tag.fromJson;
 

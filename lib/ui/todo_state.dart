@@ -13,7 +13,7 @@ class TodoState with _$TodoState {
 class Todo with _$Todo {
   factory Todo({
     required String name,
-    required String body,
+    @Default('') String body,
     required DateTime createdTime,
     required bool archived,
   }) = _Todo;

@@ -143,7 +143,7 @@ class _$TodoTearOff {
 
   _Todo call(
       {required String name,
-      required String body,
+      String body = '',
       required DateTime createdTime,
       required bool archived}) {
     return _Todo(
@@ -262,12 +262,13 @@ class __$TodoCopyWithImpl<$Res> extends _$TodoCopyWithImpl<$Res>
 class _$_Todo implements _Todo {
   _$_Todo(
       {required this.name,
-      required this.body,
+      this.body = '',
       required this.createdTime,
       required this.archived});
 
   @override
   final String name;
+  @JsonKey(defaultValue: '')
   @override
   final String body;
   @override
@@ -313,7 +314,7 @@ class _$_Todo implements _Todo {
 abstract class _Todo implements Todo {
   factory _Todo(
       {required String name,
-      required String body,
+      String body,
       required DateTime createdTime,
       required bool archived}) = _$_Todo;
 
